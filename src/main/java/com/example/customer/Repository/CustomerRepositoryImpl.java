@@ -47,8 +47,8 @@ public class CustomerRepositoryImpl implements CustomerService {
 
     private final String DELETE_SQL = "DELETE FROM customer WHERE id=?";
     @Override
-    public void deleteCustomer(Customer customer) {
-        jdbcTemplate.update(DELETE_SQL, customer.getId());
+    public void deleteCustomer(int id) {
+        jdbcTemplate.update(DELETE_SQL, id);
     }
 
 

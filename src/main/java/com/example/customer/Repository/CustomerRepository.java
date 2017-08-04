@@ -6,10 +6,9 @@ import com.example.customer.model.Customer;
 import java.util.List;
 
 public interface CustomerRepository {
-    public void addCustomer(Customer customer);
-    public List<Customer>getAllCustomers();
-    public Customer getCustomerById(int id);
-    public void updateCustomer(Customer customer);
-    public void deleteCustomer(Customer customer);
-
+    void addCustomer(Customer customer);
+    List<Customer>getAllCustomers();
+    Customer getCustomerById(int id);
+    void updateCustomer(Customer customer);
+    void deleteCustomer(int id);
 }
