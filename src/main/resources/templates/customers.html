@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:Email="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml"
+      xmlns:LastName="http://www.w3.org/1999/xhtml" xmlns:FirstName="http://www.w3.org/1999/xhtml"
+      xmlns:Phone="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Customers Page</title>
+</head>
+<body>
+<h1>The Customers are Below:</h1>
+<div th:each="customer:${customer}">
+    <p>First Name: <span th:text ="${customer.firstName}"></span></p>
+    <p>Last Name:<span th:text="${customer.lastName}"></span></p>
+    <p>Phone:<span th:text="${customer.phone}"></span></p>
+    <p>Email:<span th:text="${customer.email}"></span></p>
+</div>
+<div class="add-a-customer">
+    <a href="/addcustomers">Add A Customer</a>
+</div>
+</body>
+</html>
