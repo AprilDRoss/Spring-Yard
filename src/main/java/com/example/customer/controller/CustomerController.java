@@ -27,6 +27,17 @@ public class CustomerController {
         return customerService.getAllCustomers();
     }
 
+    @PostMapping("/addcustomers")
+    public String addCustomer(@PathVariable("firstName") String firstName,
+                             @RequestBody String json) throws IOException {
+        Address address = objectMapper.readValue(json, Address.class);
+        address.setPersonId(id);
+        personService.addAddress(address);
+        return "ok";
+    }
+
+
+
 
 
 
