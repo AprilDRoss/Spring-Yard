@@ -5,10 +5,9 @@ import com.example.customer.service.CustomerService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -23,17 +22,13 @@ public class CustomerController {
 
     @GetMapping("/customers")
     public List<Customer> getAllCustomers(Model model) {
-
         return customerService.getAllCustomers();
     }
 
-    @PostMapping("/addcustomers")
-    public String addCustomer(@PathVariable("firstName") String firstName,
-                             @RequestBody String json) throws IOException {
-        Address address = objectMapper.readValue(json, Address.class);
-        address.setPersonId(id);
-        personService.addAddress(address);
-        return "ok";
+    @PostMapping(value = "/addcustomers")
+    public void addCustomer(@RequestBody Customer customer){
+        customerService.addCustomer(customer);
+        return "addcustomers";
     }
 
 
