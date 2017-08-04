@@ -40,9 +40,9 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Transactional
     @Override
-    public void deleteCustomer(Customer customer) {
+    public void deleteCustomer(int id) {
 
-        customerRepository.deleteCustomer(customer);
+        customerRepository.deleteCustomer(id);
     }
 }
 

@@ -15,10 +15,8 @@ import java.util.List;
 
 public class CustomerController {
 
-    private CustomerService customerService;
-
     @Autowired
-    public CustomerService customerService;
+    private CustomerService customerService;
 
     //Json to Java
     private ObjectMapper objectMapper = new ObjectMapper();

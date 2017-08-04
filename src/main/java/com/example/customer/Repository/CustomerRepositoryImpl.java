@@ -14,7 +14,7 @@ import java.util.List;
 
 @Repository
 
-public class CustomerRepositoryImpl implements CustomerService {
+public class CustomerRepositoryImpl implements CustomerRepository {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
