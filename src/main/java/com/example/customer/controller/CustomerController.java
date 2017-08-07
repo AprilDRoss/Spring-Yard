@@ -21,33 +21,38 @@ public class CustomerController {
     //Json to Java
     private ObjectMapper objectMapper = new ObjectMapper();
 
-    @RequestMapping("/home")
+    @RequestMapping(value ="/home")
     public String getHome(){
         return "home";
     }
 
-    @RequestMapping("/customers")
+    @RequestMapping(value = "/customers", method=RequestMethod.GET)
     public List<Customer> getAllCustomers(Model model) {
 
         return customerService.getAllCustomers();
     }
 
-    @RequestMapping("/addcustomers")
-    public String addCustomers(@RequestParam(value="firstName")String firstName,
-                              @RequestParam(value="lastName")String lastName,
+    @RequestMapping(value="/addcustomers", method = RequestMethod.GET)
+    public String getAddCustomers(){
+        return "addcustomers";
+    }
+
+    @RequestMapping(value = "/addcustomers", method =  RequestMethod.POST)
+    public String addCustomers(@RequestParam(value="firstname")String firstName,
+                              @RequestParam(value="lastname")String lastName,
                               @RequestParam(value="phone") String phone,
                               @RequestParam(value="email")String email,
                               Model model){
         Customer customer = new Customer();
-        customer.setFirstName(firstName);
-        customer.setLastName(lastName);
+        customer.setFirstname(firstName);
+        customer.setLastname(lastName);
         customer.setPhone(phone);
         customer.setEmail(email);
         customerService.addCustomer(customer);
-        return "redirect: /viewcustomers";
+        return "redirect:/customers";
     }
 
-    @RequestMapping("/viewcustomers/{id}")
+    @RequestMapping(value= "/viewcustomers/{id}", method = RequestMethod.GET)
     public String getCustomerById(@PathVariable int id, Model model){
         Customer customer = customerService.getCustomerById(id);
         model.addAttribute("customers", customer);

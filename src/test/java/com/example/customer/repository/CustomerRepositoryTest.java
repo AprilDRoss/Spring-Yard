@@ -32,8 +32,8 @@ public class CustomerRepositoryTest {
 
 
             Customer customer1 = new Customer();
-            customer1.setFirstName(firstName);
-            customer1.setLastName(lastName);
+            customer1.setFirstname(firstName);
+            customer1.setLastname(lastName);
             customer1.setEmail(email);
             customer1.setPhone(phone);
             customerRepository.addCustomer(customer1);
@@ -45,8 +45,8 @@ public class CustomerRepositoryTest {
 
             Customer person3 = customerRepository.getCustomerById(person2.getId());
             Assert.assertNotNull(person3);
-            Assert.assertEquals(firstName, person3.getFirstName());
-            Assert.assertEquals(lastName, person3.getLastName());
+            Assert.assertEquals(firstName, person3.getFirstname());
+            Assert.assertEquals(lastName, person3.getLastname());
         }
     }
 }

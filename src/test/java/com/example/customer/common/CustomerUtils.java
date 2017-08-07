@@ -17,8 +17,8 @@ public class CustomerUtils {
         String email = Long.toString(System.currentTimeMillis());
 
         Customer customer = new Customer();
-        customer.setFirstName(firstName);
-        customer.setLastName(lastName);
+        customer.setFirstname(firstName);
+        customer.setLastname(lastName);
         customer.setPhone(phone);
         customer.setEmail(email);
 
@@ -29,7 +29,7 @@ public class CustomerUtils {
         // Find the new person in the list
         boolean found = false;
         for (Customer customers : customer) {
-            if (customers.getFirstName().equals(first) && customers.getLastName().equals(last) && customers.getPhone().equals(cell) && customers.getEmail().equals(webcontact)) {
+            if (customers.getFirstname().equals(first) && customers.getLastname().equals(last) && customers.getPhone().equals(cell) && customers.getEmail().equals(webcontact)) {
                 return customers;
             }
         }
