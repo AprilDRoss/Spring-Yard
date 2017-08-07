@@ -8,9 +8,10 @@
 </head>
 <body>
 <h1>The Customers are Below:</h1>
-<div th:each="customer:${customer}">
-    <p>First Name: <span th:text ="${customer.firstName}"></span></p>
-    <p>Last Name:<span th:text="${customer.lastName}"></span></p>
+<div th:each="customer:${customers}">
+    <p>Customer ID: <span th:text ="${customer.id}"></span></p>
+    <p>First Name: <span th:text ="${customer.firstname}"></span></p>
+    <p>Last Name:<span th:text="${customer.lastname}"></span></p>
     <p>Phone:<span th:text="${customer.phone}"></span></p>
     <p>Email:<span th:text="${customer.email}"></span></p>
 </div>

@@ -27,9 +27,10 @@ public class CustomerController {
     }
 
     @RequestMapping(value = "/customers", method=RequestMethod.GET)
-    public List<Customer> getAllCustomers(Model model) {
-
-        return customerService.getAllCustomers();
+    public String getAllCustomers(Model model) {
+        List<Customer> customers = customerService.getAllCustomers();
+         model.addAttribute("customers",customers);
+         return "customers";
     }
 
     @RequestMapping(value="/addcustomers", method = RequestMethod.GET)
@@ -41,8 +42,7 @@ public class CustomerController {
     public String addCustomers(@RequestParam(value="firstname")String firstName,
                               @RequestParam(value="lastname")String lastName,
                               @RequestParam(value="phone") String phone,
-                              @RequestParam(value="email")String email,
-                              Model model){
+                              @RequestParam(value="email")String email){
         Customer customer = new Customer();
         customer.setFirstname(firstName);
         customer.setLastname(lastName);
