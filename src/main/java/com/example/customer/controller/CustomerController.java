@@ -52,11 +52,11 @@ public class CustomerController {
         return "redirect:/customers";
     }
 
-    @RequestMapping(value= "/viewcustomers/{id}", method = RequestMethod.GET)
+    @RequestMapping(value= "/{id}", method = RequestMethod.GET)
     public String getCustomerById(@PathVariable int id, Model model){
-        Customer customer = customerService.getCustomerById(id);
-        model.addAttribute("customers", customer);
-        return "viewcustomers";
+        Customer customerById = customerService.getCustomerById(id);
+        model.addAttribute("customer", customerById);
+        return "viewcustomer";
     }
 
 }
