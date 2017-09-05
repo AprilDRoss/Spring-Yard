@@ -1,1 +1,1 @@
-Spring boot project used to implement Repositories (i.e. JDBC, Transactions and JPA), Controllers and Services
+Spring boot project used to implement Repositories (i.e. JDBC, Transactions and JPA), Controllers and Services. The application allows the user to add a customer, view all customers in the database, and view an individual customer by ID.
